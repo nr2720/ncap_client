@@ -320,7 +320,8 @@ input[type="file"] {
   /* Customizer Mobile */
 
   .goBackButtonCustomizer {
-    top: 5%
+    top: 4.95%;
+    right: 9px;
   }
 
   .h2CustomMessage {
@@ -337,18 +338,19 @@ input[type="file"] {
   .editortabs-container {
     height: 200px;
     position: absolute;
-    top: 52%;
+    top: 65%;
+    left: 45px;
   }
 
   .aipicker-container {
     width: 250px;
-    bottom: -130px;
+    bottom: -90px;
     }
 
   .divControllerRoulette {
     width: 50%;
     height: 10%;
-  margin-left: 0;
+    margin-left: 0;
   }
 
   .buttonApplyText {
@@ -361,12 +363,14 @@ input[type="file"] {
 
   .buyButtonCustomizer {
     position: absolute;
-    bottom: 30px;
+    bottom: 43%;
     left: 75%;
   }
 
   .filtertabs-container {
-    width: 250px;
+    width: 205px;
+    top: 452px;
+    height: 50px;
   }
 
 }
