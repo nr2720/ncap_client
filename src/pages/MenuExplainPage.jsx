@@ -97,9 +97,8 @@ const MenuExplain = () => {
         <div className="explainDivSection">
         <h2 className='head-text-explain'>Who are <br></br> we ?</h2>
             <motion.div {...headContentAnimation} className='flex flex-col gap-5'>
-                        <p   className='max-w-md font-normal text-gray-600'>Nocap is a full-service creative agency specializing in branding, design and product conception. <strong>We have been helping business and customers getting their idea into reality.</strong> <br></br> <br></br> Our team of talented designers are passionate about delivering the perfect product for the customer need!</p>
-                        <p   className='max-w-md font-normal text-gray-600'>Here, you can create your personalized cap, with your own logo amnd the color of your choice. When you're ready, we immediatly ship to you the customized cap. Really nice, huh ? <br></br> <br></br> <strong>You can also ask us to create from scratch the cap of your choice, with your instruction</strong> <br></br>Or we can also create the logo of your company and get merch shipped to you. You decice!</p>
-                        <p   className='max-w-md font-normal text-gray-600'>Easy as 1,2,3.<br></br> <strong> Start customizing your cap, or get in touch with us!</strong></p>
+                        <p   className='p-explain max-w-md font-normal text-gray-600'>Nocap is a full-service creative agency specializing in branding, design and product conception. <strong>We have been helping business and customers getting their idea into reality.</strong> <br></br> <br></br> Our team of talented designers are passionate about delivering the perfect product for the customer need!</p>
+                        <p   className='p-explain max-w-md font-normal text-gray-600'>Here, you can create your personalized cap and when you're ready, we immediatly ship to you the customized cap. Really nice, huh ?</p>
             <div className="buttonDivAbout">
                 <CustomButton
                     type='outline'
@@ -108,7 +107,7 @@ const MenuExplain = () => {
                         state.explainAbout = false;
                         state.customizer = true;
                     }}
-                    customStyles='w-fit px-4 pw-2.5 font-bold text-sm'
+                    customStyles='w-fit px-4 pw-2.5 font-bold text-sm buttonContactExplain'
                 />
                 <CustomButton
                     type='filled'
@@ -117,7 +116,7 @@ const MenuExplain = () => {
                         state.explainAbout = false;
                         state.explainContact = true;
                     }}
-                    customStyles='w-fit px-4 pw-2.5 font-bold text-sm'
+                    customStyles='w-fit px-4 pw-2.5 font-bold text-sm buttonContactExplain'
                 />
             </div>
             </motion.div>
@@ -159,7 +158,7 @@ const MenuExplain = () => {
     ) : snap.explainTerms ? (
         <>
         <div className="explainDivSection">
-        <h2 className='head-text-explain'>Terms and conditions<br></br></h2>
+        <h2 className='head-text-explain'>Terms<br></br></h2>
             <motion.div {...headContentAnimation} className='flex flex-col gap-5'>
             <CustomButton
                     type='filled'
@@ -181,11 +180,13 @@ const MenuExplain = () => {
 
         <div className="explainDivContactUs">
         <h2 className='head-text-explain-contact'>Get in touch,<br></br>Anytime.</h2>
-            <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">What is your name ?</label>
+
+
+            <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300 labelContact">What is your name ?</label>
             <input
               type="text"
               id="name"
-              className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+              className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light inputContact"
               placeholder="Your name here"
               value={name}
               onChange={handleNameChange}
@@ -199,7 +200,7 @@ const MenuExplain = () => {
             <input
               type="text"
               id="subject"
-              className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+              className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light inputContact"
               placeholder="Let us know how we can help you"
               value={subject}
               onChange={handleSubChange}
@@ -211,7 +212,7 @@ const MenuExplain = () => {
             <input
               type="email"
               id="email"
-              className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+              className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light inputContact"
               placeholder="The way we can reach back to you..."
               value={email}
               onChange={handleEmailChange}
@@ -223,7 +224,7 @@ const MenuExplain = () => {
             <input
               type="tel"
               id="phone"
-              className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+              className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light inputContact"
               placeholder="The way we can reach back to you..."
               required
               value={phone}
@@ -235,7 +236,7 @@ const MenuExplain = () => {
             <textarea
               id="message"
               rows="6"
-              className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 instructionContact"
               placeholder="Write your vision here..."
               value={message}
               onChange={handleMessageChange}
@@ -243,7 +244,7 @@ const MenuExplain = () => {
           </div>
           <CustomButton
                     type='filled'
-                    title='Send the inquiry'
+                    title='Get in touch'
                     handleClick={() => {
                         if(email != '' && message != '') {
                             state.explainTerms = false;

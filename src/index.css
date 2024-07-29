@@ -383,9 +383,8 @@ input[type="file"] {
   .boutonRouletteRight {
     margin-right: 100px;
   }
-}
 
-/* Checkout */
+  /* Checkout */
 
 .form-checkout {
   left: -10px;
@@ -414,3 +413,50 @@ input[type="file"] {
 .message-checkout {
   margin-top: -20px
 }
+
+
+/* Explain Sec */
+
+.head-text-explain {
+  font-size: 4rem;
+  line-height: 5rem;
+  width: 500px;
+}
+
+.font-normal {
+  font-weight: 400;
+  font-size: 0.80rem;
+}
+
+.head-text-explain-contact {
+  font-size: 3.5rem;
+  line-height: 5rem;
+  width: 500px;
+}
+
+.buttonDivAbout {
+  width: 300px;
+}
+
+.inputContact {
+  height: 10px;
+}
+
+.instructionContact {
+  height: 100px;
+}
+
+.formContactButton {
+  left: 175%;
+  top: 94%;
+  width: 100px;
+}
+
+
+
+
+
+
+}
+
+
