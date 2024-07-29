@@ -35,10 +35,10 @@ const ControllerRoulette = () => {
   <div className="divControllerRoulette">
     <button 
       type="button" 
-      className="bg-gray-800 text-white rounded-l-md border-r border-gray-100 py-1 hover:bg-red-700 hover:text-white px-1 w-10 h-8 buttonRouletteRight"
+      className="bg-gray-800 text-white rounded-l-md border-r border-gray-100 py-1 hover:bg-red-700 hover:text-white px-1 w-10 h-8 buttonRouletteRight boutonRoulette"
       onClick={handleClickRight}
     >
-      <div className="flex flex-row align-middle justify-center items-center">
+      <div className="flex flex-row align-middle justify-center items-center fleche">
         <svg 
           className="w-4" 
           fill="currentColor" 
@@ -57,7 +57,7 @@ const ControllerRoulette = () => {
 
     <button 
       type="button" 
-      className="bg-gray-800 text-white rounded-r-md py-1.3 border-l border-gray-200 hover:bg-red-700 hover:text-white mr-8 h-8 buttonRouletteLeft w-10"
+      className="bg-gray-800 text-white rounded-r-md py-1.3 border-l border-gray-200 hover:bg-red-700 hover:text-white mr-8 h-8 buttonRouletteLeft w-10 boutonRoulette"
       onClick={handleClickLeft}
     >
       <div className="flex flex-row align-middle justify-center items-center">
@@ -81,7 +81,7 @@ const ControllerRoulette = () => {
 
     <button 
       type="button" 
-      className="bg-gray-800 text-white rounded-t-md py-1.3 border-b border-gray-200 hover:bg-red-700 hover:text-white px-3 h-8 buttonRouletteUp w-10"
+      className="bg-gray-800 text-white rounded-t-md py-1.3 border-b border-gray-200 hover:bg-red-700 hover:text-white px-3 h-8 buttonRouletteUp w-10 boutonRoulette"
       onClick={handleClickUp}
     >
       <div className="flex flex-row align-middle items-center justify-center">
@@ -103,7 +103,7 @@ const ControllerRoulette = () => {
 
     <button 
       type="button" 
-      className="bg-gray-800 text-white rounded-b-md py-1.3 border-t border-gray-200 hover:bg-red-700 hover:text-white px-3 h-8 buttonRouletteDown w-10"
+      className="bg-gray-800 text-white rounded-b-md py-1.3 border-t border-gray-200 hover:bg-red-700 hover:text-white px-3 h-8 buttonRouletteDown w-10 boutonRoulette"
       onClick={handleClickDown}
     >
       <div className="flex flex-row align-middle justify-center items-center">

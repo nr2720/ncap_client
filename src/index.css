@@ -163,7 +163,7 @@ input[type="file"] {
   height: 150px;
   width: 150px;
   left: 50%;
-  top: -2%;
+  top: -4%;
   transform: translate(-50%, 0);
 }
 
@@ -303,7 +303,7 @@ input[type="file"] {
 
   .head-text {
     justify-content: center;
-    margin-bottom: 150px;
+    margin-bottom: 80px;
   }
 
   .home-text-p {
@@ -343,21 +343,25 @@ input[type="file"] {
   }
 
   .aipicker-container {
-    width: 250px;
-    bottom: -90px;
+    width: 200px;
+    bottom: 55px;
+    height: 175px;
     }
 
   .divControllerRoulette {
-    width: 50%;
-    height: 10%;
-    margin-left: 0;
+    position: absolute;
+    width: 100px;
+    height: 2%;
+    bottom: -10px;
+    left: -20px;
   }
+
 
   .buttonApplyText {
     position: absolute;
-    bottom: 10%;
-    right: 12%;
-    height: 50px;
+    bottom: -38%;
+    right: -5%;
+    height: 40px;
     width: 75px;
   }
 
@@ -369,8 +373,14 @@ input[type="file"] {
 
   .filtertabs-container {
     width: 205px;
-    top: 452px;
+    top: 50%;
     height: 50px;
   }
+  .boutonRoulette {
+    transform: scale(0.8);
+  }
 
+  .boutonRouletteRight {
+    margin-right: 100px;
+  }
 }
