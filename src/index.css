@@ -410,3 +410,7 @@ input[type="file"] {
   right: -10px;
   width: 95px;
 }
+
+.message-checkout {
+  margin-top: -20px
+}
