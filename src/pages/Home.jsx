@@ -26,7 +26,7 @@ const Home = () => {
                         </h1>
                     </motion.div>
                     <motion.div {...headContentAnimation} className='flex flex-col gap-5'>
-                        <p   className='max-w-md font-normal text-gray-600'>Use your imagination to create your own cap design.<br></br> <strong>When you're done, we'll deliver it to you. </strong> <br></br>You design, we deliver. No 🧢</p>
+                        <p   className='max-w-md font-normal text-gray-600 home-text-p'>Use your imagination to create your own cap design.<br></br> <strong>When you're done, we'll deliver it to you. </strong> <br></br>You design, we deliver. No 🧢</p>
                         <CustomButton
                          type='filled' 
                          title='Try it' 

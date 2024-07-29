@@ -30,7 +30,7 @@ const CameraRig = ({ children }) => {
             
         }
         if(isMobile) {
-            targetPosition = [0, 0.2, 2.5];
+            targetPosition = [0, 0.025, 2.5];
         }
     }
     else if (snap.customizer) {

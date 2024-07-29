@@ -33,6 +33,7 @@ html {
   @apply xl:text-[10rem] text-[6rem] xl:leading-[11rem] leading-[7rem] font-black text-black;
 }
 
+
 .head-text-explain {
   @apply xl:text-[7rem] text-[6rem] xl:leading-[8rem] leading-[7rem] font-black text-black;
   margin-bottom: 10px;
@@ -274,4 +275,40 @@ input[type="file"] {
 
 .buttonRouletteDown {
   grid-area: 3 / 2 / 4 / 3;
+}
+
+
+
+
+/* Mobile View */
+
+@media only screen and (max-width: 480px) {
+
+  .home {
+    height: 100%;
+  }
+
+  .home-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 120px;
+  }
+
+  .head-text {
+    justify-content: center;
+    margin-bottom: 150px;
+  }
+
+  .home-text-p {
+    color: #d9d9d9;
+  }
+  .menuOptions {
+    top: 10%
+  }
+  .menuTab {
+    top: 5%
+  }
 }
