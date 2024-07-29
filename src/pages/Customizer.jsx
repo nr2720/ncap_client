@@ -166,7 +166,7 @@ const Customizer = () => {
             <motion.div
             key='custom'
             
-            className='absolute top-0 left-0 z-10'
+            className='absolute top-0 left-0 z-10 sideTabContainer'
                 {...fadeAnimation}
             >
                 <div className='flex item-center min-h-screen'>
@@ -186,7 +186,7 @@ const Customizer = () => {
             </motion.div>
 
             <motion.div
-            className='absolute z-10 top-5 right-5' {...fadeAnimation}
+            className='absolute z-10 top-5 right-5 goBackButtonCustomizer' {...fadeAnimation}
             >
                 <CustomButton
                     type='outline'
@@ -199,7 +199,7 @@ const Customizer = () => {
                 />
             </motion.div>
             <motion.div
-            className='absolute z-10 bottom-32 buyButton' {...fadeAnimation}
+            className='absolute z-10 bottom-32 buyButton buyButtonCustomizer' {...fadeAnimation}
             >
                 <CustomButton
                     type='filled'

@@ -250,6 +250,10 @@ input[type="file"] {
   flex: 0.1, 1, 0%;
 }
 
+.inputContainer {
+  display: flex;
+}
+
 /* Div controller roulette */
 
 .divControllerRoulette {
@@ -311,4 +315,56 @@ input[type="file"] {
   .menuTab {
     top: 5%
   }
+
+
+  /* Customizer Mobile */
+
+  .goBackButtonCustomizer {
+    top: 5%
+  }
+
+  .h2CustomMessage {
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+    top: 12%;
+  }
+
+  .sideTabContainer {
+    height: 100%
+  }
+
+  .editortabs-container {
+    height: 200px;
+    position: absolute;
+    top: 52%;
+  }
+
+  .aipicker-container {
+    width: 300px;
+    bottom: -130px;
+    }
+
+  .divControllerRoulette {
+    width: 50%;
+    height: 10%;
+  }
+
+  .buttonApplyText {
+    position: absolute;
+    bottom: 10%;
+    right: 12%;
+    height: 50px;
+    width: 75px;
+  }
+
+  .buyButtonCustomizer {
+    bottom: 30px;
+    right: 1000px;
+  }
+
+  .filtertabs-container {
+    width: 250px;
+  }
+
 }

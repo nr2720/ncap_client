@@ -34,8 +34,12 @@ const CameraRig = ({ children }) => {
         }
     }
     else if (snap.customizer) {
+        if(isBreakPoint) {
+            targetPosition = [0, 0, 2];
+            
+        }
         if(isMobile) {
-            targetPosition = [0, 0, 2.5];
+            targetPosition = [0, -0.1, 2.5];
         }
         else {
             targetPosition = [0, 0, 1.5]

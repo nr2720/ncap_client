@@ -74,17 +74,19 @@ const AIPicker = ({ prompt, setPrompt, generateImg, handleSubmit, isOpen }) => {
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
       />
-     
+        <div className="inputContainer">
         <input type="color" className='w-10/12 ml-4 p-0' value={color} onChange={handleChangeColor}/>
         <input type="number" min='0' max='5' value={value} placeholder="Size..."className='w-10/12 ml-4 p-0' onChange={handleChangeSizeText} />
+        </div>
+
         <SelectFont />
       <ControllerRoulette/>
       <>
             <CustomButton
-              type='outline'
+              type='filled'
               title='Apply'
               handleClick={() => handleSubmit('logo')}
-              customStyles='text-xs'
+              customStyles='text-xs buttonApplyText'
              />
           
           </>
