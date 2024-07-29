@@ -20,7 +20,7 @@ const Home = () => {
                 <motion.header {...slideAnimation('down')}>
                 </motion.header>
                 <motion.div className='home-content' {...headContainerAnimation}>
-                    <motion.div {...headTextAnimation}>
+                    <motion.div {...headTextAnimation} className='headTextDiv'>
                         <h1 className='head-text'>
                             Make <br></br> your 🧢
                         </h1>

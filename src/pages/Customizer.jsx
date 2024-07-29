@@ -216,7 +216,7 @@ const Customizer = () => {
             
             <motion.div
             className='filtertabs-container gap-3'
-            {...slideAnimation('up')}
+            {...slideAnimation('left')}
             >
                 {FilterTabs.map((tab) => (
                     <Tab 
