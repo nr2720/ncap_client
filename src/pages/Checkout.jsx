@@ -41,13 +41,13 @@ const Checkout = () => {
             className='absolute z-10 top-5 right-5' {...fadeAnimation}
             >
                 <CustomButton
-                    type='filled'
+                    type='outline'
                     title='Go Back'
                     handleClick={() => {
                         state.checkout = false;
                         state.customizer = true;
                     }}
-                    customStyles='w-fit px-4 pw-2.5 font-bold text-sm'
+                    customStyles='w-fit px-4 pw-2.5 font-bold text-sm buttonCheckoutGoback'
                 />
             </motion.div>
 

@@ -48,7 +48,7 @@ const CameraRig = ({ children }) => {
 
     else if (snap.checkout) {
         if (isMobile) {
-            targetPosition = [0, 0, 2.5]
+            targetPosition = [0, -0.14, 2.5]
         }
         else if(isMD) {
             targetPosition = [0.18, 0, 2]

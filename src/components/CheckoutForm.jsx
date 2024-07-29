@@ -125,7 +125,7 @@ export default function CheckoutForm() {
 
 
     return(
-        <>
+        <div className="formCheckoutDivOne">
             <h2 className='absolute h2CheckoutTitle .font-message'>Last few steps...</h2>
             <div className="inputGrouper flex flex-col justify-start items-start">
                 <div className="flex items-center mb-4">
@@ -202,6 +202,6 @@ export default function CheckoutForm() {
                 <p className='text-red-500 absolute acceptTermsRed'>Please accept the conditions before making a purchase</p>
             )}
              
-        </>
+        </div>
     )
 }
