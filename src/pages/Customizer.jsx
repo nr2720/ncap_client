@@ -42,9 +42,6 @@ const Customizer = () => {
         textCap: false,
     });
 
-    useState(() => {
-        console.log(activeFilterTab)
-    }, [activeFilterTab])
 
 
     const handleTabClick = (tab) => {
@@ -216,7 +213,7 @@ const Customizer = () => {
             
             <motion.div
             className='filtertabs-container gap-3'
-            {...slideAnimation('left')}
+            {...fadeAnimation}
             >
                 {FilterTabs.map((tab) => (
                     <Tab 

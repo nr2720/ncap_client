@@ -27,7 +27,6 @@ const AIPicker = ({ prompt, setPrompt, generateImg, handleSubmit, isOpen }) => {
 
   const handleChangeSizeText = (e) => {
     let inputText = e.target.value;
-    console.log(inputText)
     switch (inputText) {
       case '0':
         setValue(inputText);

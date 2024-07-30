@@ -17,6 +17,7 @@ const CanvasModel = forwardRef((props, ref) => {
       camera={{ position: [0, 0, 5], fov: 15 }}
       gl={{ preserveDrawingBuffer: true }}
       className='w-full max-w-full h-full transition-all ease-in'
+      id='capCanvas'
       ref={ref}
     >
       <ambientLight intensity={0.5}/>

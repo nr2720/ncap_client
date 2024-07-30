@@ -2,6 +2,9 @@ import { useRef, useState } from 'react';
 import CustomButton from './CustomButton';
 import state from '../store';
 import { useSnapshot } from 'valtio';
+import { Label, Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
+import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
+import html2canvas from 'html2canvas';
 
 
 export default function CheckoutForm() {
@@ -13,9 +16,48 @@ export default function CheckoutForm() {
     const [isTermsAccepted, setIsTermsAccepted] = useState(true);
 
     const [customizer, setCustomizer] = useState('');
-    const [capImg, setCapImg] = useState(state.logoDecal);
+    const [capImg, setCapImg] = useState(undefined);
+
+    const isBreakPoint = window.innerWidth > 1260;
+    const isMobile = window.innerWidth <= 600;
+    const isMD = window.innerWidth < 1260 && window.innerWidth > 600;
+ 
 
 
+    const headSize = [
+        {
+            id: 0,
+            name: 'Small',
+            metric: '54',
+            us: '6 3/4'
+        },
+        {
+            id: 1,
+            name: 'Medium',
+            metric: '57',
+            us: '7 1/8'
+        },
+        {
+            id: 2,
+            name: 'Large',
+            metric: '59',
+            us: '7 3/8'
+        },
+        {
+            id: 3,
+            name: 'X-Large',
+            metric: '61',
+            us: '7 5/8'
+        }
+    ]
+
+    const [headSelect, setHeadSelect] = useState(headSize[1]);
+
+
+
+
+
+    //functions
     const handleCustomizerChange = (e) => {
         setCustomizer(e.target.value);
     }
@@ -33,19 +75,71 @@ export default function CheckoutForm() {
         setIsTermsAccepted(!isTermsAccepted)
     }
 
+    const handleHeadSelect = (e) => {
+        setHeadSelect(headSize[e])
+        state.capSize = headSize[e].name;
+    }   
 
+    const cropCanvas = (sourceCanvas, cropWidth, cropHeight) => {
+        const offscreenCanvas = document.createElement('canvas');
+        offscreenCanvas.width = cropWidth;
+        offscreenCanvas.height = cropHeight;
+        const ctx = offscreenCanvas.getContext('2d');
+    
+        // Calculate the cropping position (center crop)
+        let xPosition = 475;
+        let yPosition = (sourceCanvas.height - cropHeight) / 2;;
+        if(isBreakPoint) {
+            xPosition = 475;
+        }
+        else if (isMobile) {
+            xPosition = 170;
+            yPosition = 200;
+        }
+    
 
-
-    const canvasRef = useRef();
-
-    const captureScreenshot = () => {
-        const canvas = canvasRef.current;
-        const dataURL = canvas.toDataURL('image/jpeg');
-        const link = document.createElement('a');
-        link.href = dataURL;
-        link.download = 'screenshot.jpg';
-        link.click();
+        const sourceWidth = sourceCanvas.width;
+        const sourceHeight = sourceCanvas.height;
+        const startX = xPosition;
+        const startY = yPosition // Center vertically
+    
+        ctx.drawImage(
+            sourceCanvas,
+            startX, startY, cropWidth, cropHeight, // source x, y, width, height
+            0, 0, cropWidth, cropHeight // destination x, y, width, height
+        );
+    
+        return offscreenCanvas;
     };
+
+
+
+    const captureScreenshot = async () => {
+        const canvas = document.querySelector('#capCanvas');
+        let xSize = 1000;
+        let ySize = 1000;
+        if(isMobile) {
+            xSize = 500;
+            ySize = 500
+        }
+
+
+        if (!canvas) {
+            return '';
+
+        }
+        try {
+            const screenshotCanvas = await html2canvas(canvas);
+            const croppedImage = cropCanvas(screenshotCanvas, xSize, ySize);
+            const image = croppedImage.toDataURL('image/jpeg');
+            return image;
+        } catch (err) {
+            console.error('Failed to capture screenshot:', err);
+            return '';
+        }
+    }
+
+
 
     
 
@@ -57,16 +151,18 @@ export default function CheckoutForm() {
         if(!isTermsAccepted) {
             return;
         }
+        const img = await captureScreenshot();
         const capColor = state.color;
         let capImgUrl;
         let orderId;
+        let capSize;
         //sending image and info of image
 
         const imageSendingOptions = {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                capImg: capImg,
+                capImg: img,
             })
         }
 
@@ -84,7 +180,7 @@ export default function CheckoutForm() {
             const imageData = await imageResponse.json();
             capImgUrl = imageData.signedUrl;
             orderId = imageData.orderId;
-            console.log(snap.logoText)
+            
             // Prepare data for Stripe session
             const requestOptions = {
               method: 'POST',
@@ -106,6 +202,7 @@ export default function CheckoutForm() {
                 textFont: snap.textFont.url,
                 textPositionX: snap.positionTextX,
                 textPositionY: snap.positionTextY,
+                capSize: snap.capSize,
               })
             };
 
@@ -125,6 +222,7 @@ export default function CheckoutForm() {
 
 
     return(
+ 
         <div className="formCheckoutDivOne">
             <h2 className='absolute h2CheckoutTitle .font-message'>Last few steps...</h2>
             <div className="inputGrouper flex flex-col justify-start items-start">
@@ -167,7 +265,43 @@ export default function CheckoutForm() {
                     </label>
 
                 </div>
-                <div className="flex items-center mb-4">
+                    <Listbox value={headSelect} onChange={handleHeadSelect}>
+                        <div className="relative mb-1">
+                            <ListboxButton className="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm sm:leading-6">
+                            <span className="flex items-center">
+                                <span className="ml-3 block truncate">{headSelect.name}</span>
+                            </span>
+                            <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
+                                <ChevronUpDownIcon aria-hidden="true" className="h-5 w-5 text-gray-400" />
+                            </span>
+                            </ListboxButton>
+
+                            <ListboxOptions
+                            transition
+                            className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none data-[closed]:data-[leave]:opacity-0 data-[leave]:transition data-[leave]:duration-100 data-[leave]:ease-in sm:text-sm"
+                            >
+                            {headSize.map((size) => (
+                                <ListboxOption
+                                key={size.id}
+                                name={size.name}
+                                value={size.id}
+                                className="group relative cursor-default select-none py-2 pl-3 pr-9 text-gray-900 data-[focus]:bg-indigo-600 data-[focus]:text-white"
+                                >
+                                <div className="flex items-center">
+                                    <span className="ml-3 block truncate font-normal group-data-[selected]:font-semibold">
+                                    {size.name}
+                                    </span>
+                                </div>
+
+                                <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600 group-data-[focus]:text-white [.group:not([data-selected])_&]:hidden">
+                                    <CheckIcon aria-hidden="true" className="h-5 w-5" />
+                                </span>
+                                </ListboxOption>
+                            ))}
+            </ListboxOptions>
+        </div>
+                    </Listbox>
+                <div className="flex items-center isTermAccepted">
                     <input
                     checked={isTermsAccepted}
                     id="checkbox-1"
@@ -202,6 +336,6 @@ export default function CheckoutForm() {
                 <p className='text-red-500 absolute acceptTermsRed'>Please accept the conditions before making a purchase</p>
             )}
              
-        </div>
+        </div> 
     )
 }

@@ -16,6 +16,8 @@ const state = proxy({
     logoDecal: '/ncp.png',
     fullDecal: './jesse.png',
     isSent: false,
+    capSize: 'medium',
+    capImg: '/ncp.png',
 
     //text
     isTextUsed: false,

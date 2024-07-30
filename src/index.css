@@ -104,6 +104,9 @@ input[type="file"] {
   display: none !important;
 }
 
+.isTermAccepted {
+  margin-top: 10px;
+}
 .buyButton {
   left: 50%;
   transform: translate(-50%, 0);
@@ -233,7 +236,9 @@ input[type="file"] {
 }
 
 .buyButtonCheckout {
-  bottom: 40px;
+  bottom: 4%;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .acceptTermsRed {
@@ -286,7 +291,7 @@ input[type="file"] {
 
 /* Mobile View */
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 700px) {
 
   .home {
     height: 100%;
