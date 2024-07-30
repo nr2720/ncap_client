@@ -2,10 +2,12 @@ import React from 'react'
 import CustomButton from './CustomButton';
 import ControllerRoulette from './ControllerRoulette'
 import SelectFont from './SelectFont';
+import SelectSize from './SelectSize';
 
 import state from '../store';
 import { useSnapshot } from 'valtio';
 import { useState, useEffect } from 'react';
+
 
 const AIPicker = ({ prompt, setPrompt, generateImg, handleSubmit, isOpen }) => {
   const snap = useSnapshot(state);
@@ -67,15 +69,16 @@ const AIPicker = ({ prompt, setPrompt, generateImg, handleSubmit, isOpen }) => {
 
     <div className='aipicker-container'>
       <textarea 
-        placeholder='Write something you want to appear on the cap ...'
-        className='aipicker-textarea textAreaText'
+        placeholder='Write somethings...'
+        className='aipicker-textarea textAreaText text-white'
         rows={5}
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
       />
         <div className="inputContainer">
-        <input type="color" className='w-10/12 ml-4 p-0' value={color} onChange={handleChangeColor}/>
-        <input type="number" min='0' max='5' value={value} placeholder="Size..."className='w-10/12 ml-4 p-0' onChange={handleChangeSizeText} />
+        <input type="color" className='w-10/12 p-0 rouletteColor' value={color} onChange={handleChangeColor}/>
+        {/* <input type="number" min='0' max='5' value={value} placeholder="Size..."className='w-10/12 ml-4 p-0' onChange={handleChangeSizeText} /> */}
+        <SelectSize />
         </div>
 
         <SelectFont />

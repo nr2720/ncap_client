@@ -18,10 +18,10 @@ const FilePicker = ({ file, setFile, readFile, isOpen }) => {
         <label htmlFor='file-upload' className='filepicker-label'>
           Upload File
         </label>
-        <p className='mt-2 text-gray-500 text-xs truncate'>
+        <p className='mt-2 text-gray-50 text-xs truncate'>
           {file === '' ? 'No file selected.' : file.name}
         </p>
-        <p className='mt-2 text-gray-500 text-xs'>
+        <p className='mt-2 text-gray-50 text-xs'>
           {file === '' ? 'Use your own image on your 🧢' : ''}
         </p>
 

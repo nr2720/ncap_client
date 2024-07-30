@@ -462,7 +462,19 @@ input[type="file"] {
 }
 
 
+.inputContainer {
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
 
+.rouletteColor {
+  width: 30px;
+  border-radius: 12px;
+  border: 1px solid black;
+  margin-top: 5%;
+  background-color: black;
+}
 
 
 }
