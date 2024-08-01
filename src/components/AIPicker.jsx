@@ -25,7 +25,6 @@ const AIPicker = ({ prompt, setPrompt, generateImg, handleSubmit, isOpen }) => {
 
   const handleChangeColor = (e) => {
     setColor(e.target.value);
-    state.textColor = color;
   }
 
   const handleChange = (e) => {
@@ -37,6 +36,9 @@ const AIPicker = ({ prompt, setPrompt, generateImg, handleSubmit, isOpen }) => {
   }, [realPrompt])
 
 
+  useEffect(() => {
+    state.textColor = color;
+  }, [color])
 
 
 

@@ -80,7 +80,7 @@ export default function SelectFont() {
   const [selected, setSelected] = useState(snap.textFont);
 
   const handleSelected = (e) => {
-    setSelected(fonts[e]);
+    setSelected(fonts[e.target.value]);
   }
 
 
@@ -127,10 +127,10 @@ export default function SelectFont() {
     // </Listbox>
 
 
-<form class="max-w-sm mx-auto">
-  <select id="fonts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+<form className="max-w-sm mx-auto">
+  <select onChange={handleSelected} id="fonts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
     {fonts.map((font) => (
-                    <option key={font.id} value={font.url}>
+                    <option key={font.id} value={font.id}>
                         {font.key}
                     </option>
                 ))}
