@@ -19,6 +19,7 @@ const AIPicker = ({ prompt, setPrompt, generateImg, handleSubmit, isOpen }) => {
   }, [size]);
 
   //Color State
+  const [realPrompt, setRealPrompt] = useState(snap.logoText)
   const [color, setColor] = useState(snap.textColor);
   const [value, setValue] = useState(3);
 
@@ -27,37 +28,16 @@ const AIPicker = ({ prompt, setPrompt, generateImg, handleSubmit, isOpen }) => {
     state.textColor = color;
   }
 
-  const handleChangeSizeText = (e) => {
-    let inputText = e.target.value;
-    switch (inputText) {
-      case '0':
-        setValue(inputText);
-        setSize(0.0045);
-        break;
-      case '1': 
-      setValue(inputText);
-      setSize(0.005);
-        break;
-      case '2':
-        setValue(inputText);
-        setSize(0.0065);
-        break;
-      case '3': 
-      setValue(inputText);
-      setSize(0.0085);
-        break;
-      case '4':
-        setValue(inputText);
-        setSize(0.01);
-        break;
-      case '5':
-        setValue(inputText);
-        setSize(0.0125);
-      break;
-      default:
-        break;
-    }
+  const handleChange = (e) => {
+    setRealPrompt(e.target.value)
   }
+
+  useEffect(() => {
+    state.logoText = realPrompt;
+  }, [realPrompt])
+
+
+
 
 
 
@@ -72,24 +52,23 @@ const AIPicker = ({ prompt, setPrompt, generateImg, handleSubmit, isOpen }) => {
         placeholder='Write somethings...'
         className='aipicker-textarea textAreaText text-white'
         rows={5}
-        value={prompt}
-        onChange={(e) => setPrompt(e.target.value)}
+        value={snap.logoText}
+        onChange={handleChange}
       />
         <div className="inputContainer">
-        <input type="color" className='w-10/12 p-0 rouletteColor' value={color} onChange={handleChangeColor}/>
-        {/* <input type="number" min='0' max='5' value={value} placeholder="Size..."className='w-10/12 ml-4 p-0' onChange={handleChangeSizeText} /> */}
         <SelectSize />
+        <SelectFont />
         </div>
 
-        <SelectFont />
+      <input type="color" className='w-10/12 p-0 rouletteColor' value={color} onChange={handleChangeColor}/>
       <ControllerRoulette/>
       <>
-            <CustomButton
+            {/* <CustomButton
               type='filled'
               title='Apply'
               handleClick={() => handleSubmit('logo')}
               customStyles='text-xs buttonApplyText'
-             />
+             /> */}
           
           </>
     </div>

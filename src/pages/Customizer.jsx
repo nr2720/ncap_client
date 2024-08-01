@@ -12,17 +12,15 @@ import { fadeAnimation, slideAnimation, headTextAnimation } from '../config/moti
 import { AIPicker, ColorPicker, FilePicker, Tab, CustomButton } from '../components'
 
 const Customizer = () => {
-    const snap = useSnapshot(state)
+    const snap = useSnapshot(state);
+
+    const isMobile = window.innerWidth <= 600;
 
     const [file, setFile] = useState('');
 
     const [prompt, setPrompt] = useState('');
 
     const [generateImg, setGenerateImg] = useState(false);
-
-
-
-
 
     const [activeEditor, setActiveEditor] = useState('')
     const [tabIsOpen, setTabIsOpen] = useState({
@@ -31,17 +29,11 @@ const Customizer = () => {
         ai: false,
     });
 
-
-
-
-
-
     const [activeFilterTab, setActiveFilterTab] = useState({
         logoShirt: true,
         stylishShirt: false,
         textCap: false,
     });
-
 
 
     const handleTabClick = (tab) => {
@@ -100,9 +92,6 @@ const Customizer = () => {
     }
 
     const handleSubmit = () => {
-        if(!prompt) {
-            return alert('Please enter a prompt');
-        }
         state.logoText = prompt;
     }
 
@@ -152,14 +141,17 @@ const Customizer = () => {
    <AnimatePresence>
         {snap.customizer &&(
         <>
-            <motion.div
-            {...fadeAnimation}
-            >
-            <h1 className='absolute font-message h2CustomMessage'
-            >
-                
-                Pimp your cap</h1>
-            </motion.div>
+
+            {!isMobile &&(
+                            <motion.div
+                            {...fadeAnimation}
+                            >
+                            <h1 className='absolute font-message h2CustomMessage'
+                            >
+                                
+                                Pimp your cap</h1>
+                            </motion.div>
+            )}
             <motion.div
             key='custom'
             

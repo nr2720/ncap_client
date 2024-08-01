@@ -289,6 +289,25 @@ input[type="file"] {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Mobile View */
 
 @media only screen and (max-width: 700px) {
@@ -349,16 +368,20 @@ input[type="file"] {
 
   .aipicker-container {
     width: 200px;
-    bottom: 55px;
-    height: 175px;
+    bottom: -50px;
+    height: 270px;
+    justify-content: start;
+    align-items: center;
     }
 
   .divControllerRoulette {
-    position: absolute;
-    width: 100px;
-    height: 2%;
-    bottom: -10px;
+
+    /* position: absolute; */
+    width: 80px;
+    height: 80px;
+    bottom: -90px;
     left: -20px;
+    margin-right: 37%;
   }
 
 
@@ -380,13 +403,6 @@ input[type="file"] {
     width: 205px;
     top: 50%;
     height: 50px;
-  }
-  .boutonRoulette {
-    transform: scale(0.8);
-  }
-
-  .boutonRouletteRight {
-    margin-right: 100px;
   }
 
   /* Checkout */
@@ -469,11 +485,11 @@ input[type="file"] {
 }
 
 .rouletteColor {
-  width: 30px;
-  border-radius: 12px;
-  border: 1px solid black;
-  margin-top: 5%;
-  background-color: black;
+  height: 20px;
+}
+
+.textAreaText {
+  height: 40px;
 }
 
 
