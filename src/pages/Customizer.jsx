@@ -219,9 +219,6 @@ const Customizer = () => {
                     />
                 ))}
             </motion.div>
-            <div className="turnAroundContainer">
-                <ButtonTurnAround/>
-            </div>
         </>
         )}
    </AnimatePresence>
