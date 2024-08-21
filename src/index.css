@@ -504,7 +504,9 @@ input[type="file"] {
 
 }
 
-
+.homeHeadText {
+  @apply xl:text-[5rem] text-[5rem] xl:leading-[7rem] leading-[6rem] font-black text-black;
+}
 
 
 }

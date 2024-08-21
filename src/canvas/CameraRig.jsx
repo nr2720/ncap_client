@@ -36,7 +36,7 @@ const CameraRig = ({ children }) => {
             
         }
         if(isMobile) {
-            targetPosition = [0, 0.05, 2.2 ];
+            targetPosition = [0, 0.03, 2.2 ];
         }
     }
     else if (snap.customizer) {
@@ -84,7 +84,7 @@ const CameraRig = ({ children }) => {
     //modal rotation
     easing.dampE(
         group.current.rotation,
-        [state.pointer.y / 10, -state.pointer.x / 5, 0],
+        [state.pointer.y / 10, -state.pointer.x / 2, 0],
         0.25,
         delta
     )
