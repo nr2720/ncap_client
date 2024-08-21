@@ -23,6 +23,10 @@ export const FilterTabs = [
   {
     name: "textLogo",
     icon: pen,
+  },
+  {
+    name: 'turnAroundButt',
+    icon: pen,
   }
 ];
 

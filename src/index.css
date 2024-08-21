@@ -19,6 +19,10 @@ html {
 
 .app {
   @apply relative w-full h-screen overflow-hidden;
+  background-color: #ffee7f;
+  background-image: linear-gradient(147deg, #ffee7f 0%, #ff6464 24%, #ffffff 97%, #ffffff 100%);
+  
+
 }
 
 .home {
@@ -490,6 +494,14 @@ input[type="file"] {
 
 .textAreaText {
   height: 40px;
+}
+
+.turnAroundContainer {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, 0);
+
 }
 
 

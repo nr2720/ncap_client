@@ -9,6 +9,12 @@ const CameraRig = ({ children }) => {
     const group = useRef();
     const snap = useSnapshot(state);
 
+
+
+
+    
+
+
     useFrame((state, delta) => {
     const isBreakPoint = window.innerWidth <= 1260;
     const isMobile = window.innerWidth <= 600;
@@ -34,6 +40,7 @@ const CameraRig = ({ children }) => {
         }
     }
     else if (snap.customizer) {
+        
         if(isBreakPoint) {
             targetPosition = [0, 0, 2];
             
@@ -64,6 +71,8 @@ const CameraRig = ({ children }) => {
         }
     }
 
+
+    
     //set modal camera position
     easing.damp3(
         state.camera.position, 
@@ -71,6 +80,7 @@ const CameraRig = ({ children }) => {
         0.25, 
         delta
     )
+
     //modal rotation
     easing.dampE(
         group.current.rotation,

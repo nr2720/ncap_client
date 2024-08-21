@@ -9,7 +9,7 @@ import { downloadCanvasToImage, reader } from '../config/helpers'
 import { EditorTabs, FilterTabs, DecalTypes } from '../config/constants'
 import { fadeAnimation, slideAnimation, headTextAnimation } from '../config/motion'
 
-import { AIPicker, ColorPicker, FilePicker, Tab, CustomButton } from '../components'
+import { AIPicker, ColorPicker, FilePicker, Tab, CustomButton, ButtonTurnAround } from '../components'
 
 const Customizer = () => {
     const snap = useSnapshot(state);
@@ -110,8 +110,9 @@ const Customizer = () => {
             case 'logoShirt':
                 state.isLogoTexture = !snap.isLogoTexture;
                 break;
-            case 'stylishShirt':
-                state.isFullTexture = !activeFilterTab[tabName];
+            case 'turnAround':
+                console.log('hello')
+
                 break;
             case 'textLogo':
                 state.isText = !snap.isText;
@@ -209,6 +210,7 @@ const Customizer = () => {
             >
                 {FilterTabs.map((tab) => (
                     <Tab 
+                        id={tab.name}
                         key={tab.name}
                         tab={tab}
                         isFilterTab
@@ -217,6 +219,9 @@ const Customizer = () => {
                     />
                 ))}
             </motion.div>
+            <div className="turnAroundContainer">
+                <ButtonTurnAround/>
+            </div>
         </>
         )}
    </AnimatePresence>

@@ -11,46 +11,47 @@ import { useSnapshot } from 'valtio'
 const fonts = [
   {
     id: 0,
-    name: '.font-roboto',
-    key: 'Roboto',
-    url: 'font/roboto.json'
+    name: 'Amsterdam',
+    key: 'Amsterdam',
+    url: '/font/amsterdam.json'
   },
   {
     id: 1,
-    name: '.font-open-sans',
-    key: 'Open San',
-    url: 'font/opensans.json'
+    name: '.Cinderella',
+    key: 'Cinderella',
+    url: '/font/cinderella.json'
   },
   {
     id: 2,
-    name: '.font-lato',
-    key: 'Font Lato',
-    url: 'font/lato.json'
+    name: 'Country',
+    key: 'Country',
+    url: '/font/country.json'
   },
   {
     id: 3,
-    name: '.font-montserrat',
-    key: 'Montserrat',
-    url: 'font/montserrat.json'
+    name: 'Lemon Jelly',
+    key: 'Lemon Jelly',
+    url: '/font/lemonjelly.json'
   },
+  
   {
     id: 4,
-    name: '.font-oswald',
-    key: 'Font Oswald',
-    url: 'font/oswald.json'
+    name: '.veganStyle',
+    key: 'veganStyle',
+    url: '/font/veganStyle.json'
   },
-  {
-    id: 5,
-    name: '.font-raleway',
-    key: 'Raleway',
-    url: 'font/raleway.json'
-  },
-  {
-    id: 6,
-    name: '.font-playwrite',
-    key: 'Playwrite',
-    url: 'font/playwrite.json'
-  },
+  // {
+  //   id: 5,
+  //   name: '.font-raleway',
+  //   key: 'Raleway',
+  //   url: 'font/raleway.json'
+  // },
+  // {
+  //   id: 6,
+  //   name: '.font-playwrite',
+  //   key: 'Playwrite',
+  //   url: 'font/playwrite.json'
+  // },
   // {
   //   id: 7,
   //   name: '.font-ubuntu',
@@ -128,7 +129,7 @@ export default function SelectFont() {
 
 
 <form className="max-w-sm mx-auto">
-  <select onChange={handleSelected} id="fonts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  <select onChange={handleSelected} id="fonts" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
     {fonts.map((font) => (
                     <option key={font.id} value={font.id}>
                         {font.key}

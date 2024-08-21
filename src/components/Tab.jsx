@@ -4,7 +4,7 @@ import state from '../store'
 
 
 
-const Tab = ({name, img, isFilterTab, isActiveTab, tab, handleClick }) => {
+const Tab = ({name, img, isFilterTab, isActiveTab, tab, handleClick, id }) => {
   const snap = useSnapshot(state);
 
   const activeStyles = isFilterTab && isActiveTab ? {
@@ -14,10 +14,11 @@ const Tab = ({name, img, isFilterTab, isActiveTab, tab, handleClick }) => {
   }
   return (
     <div
-     className={`tab-btn ${isFilterTab ? 'rounded-full glassmorphism' : 'rounded-4'}`}
+     className={`tab-btn ${isFilterTab ? 'rounded-full glassmorphism' : 'rounded-4'} ${id}` }
       key={tab.name}
       onClick={handleClick}
       style={activeStyles}
+
      >
       <img 
       src={tab.icon} alt={'image of' + name}

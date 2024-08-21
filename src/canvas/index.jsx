@@ -14,14 +14,14 @@ const CanvasModel = forwardRef((props, ref) => {
   return (
     <Canvas
       shadows
-      camera={{ position: [0, 0, 5], fov: 15 }}
+      camera={{ position: [0, 0, 2], fov: 15 }}
       gl={{ preserveDrawingBuffer: true }}
       className='w-full max-w-full h-full transition-all ease-in'
       id='capCanvas'
       ref={ref}
     >
-      <ambientLight intensity={0.5}/>
-      <Environment preset='city'/>
+      <ambientLight intensity={5}/>
+      <Environment preset='sunset'/>
 
       <CameraRig>
         <Backdrop/>

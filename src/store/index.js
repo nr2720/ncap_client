@@ -27,11 +27,11 @@ const state = proxy({
     sizeText: 0.0085,
     textColor: '#ffffff', 
     textFont: {
-        id: 0,
-        name: '.font-roboto',
-        key: 'Roboto',
-        url: 'font/roboto.json'
-      },
+      id: 0,
+      name: '.mufan',
+      key: 'Mufan',
+      url: '/font/veganStyle.json'
+    },
 })
 
 export default state
